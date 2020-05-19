@@ -1,14 +1,16 @@
 import './index.scss';
 import React from 'react';
 import styled from 'styled-components';
+import Nav from './components/Nav';
+
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect
 } from 'react-router-dom';
-import Nav from './components/Nav';
+
 
 const Wrapper = styled.div`
   display: flex;
