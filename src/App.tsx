@@ -8,6 +8,7 @@ import {
   Link,
   Redirect
 } from 'react-router-dom';
+import Nav from './components/Nav';
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,18 +21,7 @@ const Main = styled.div`
   overflow: auto;
 `;
 
-const Nav = styled.nav`
-  >ul{
-    display: flex;
-    li{
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 0;
-    }
-  }
-`;
+
 
 export default function BasicExample() {
   return (
@@ -54,19 +44,7 @@ export default function BasicExample() {
             </Route>
           </Switch>
         </Main>
-        <Nav>
-          <ul>
-            <li>
-              <Link to="/tags">标签</Link>
-            </li>
-            <li>
-              <Link to="/money">记账</Link>
-            </li>
-            <li>
-              <Link to="/statistics">统计</Link>
-            </li>
-          </ul>
-        </Nav>
+        <Nav/>
       </Wrapper>
     </Router>
   );
