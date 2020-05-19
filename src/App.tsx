@@ -10,69 +10,52 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
-
-const Main = styled.div`
-  flex-grow: 1;
-  overflow: auto;
-`;
-
+import Layout from './components/Layout';
 
 
 export default function BasicExample() {
   return (
     <Router>
-      <Wrapper>
-        <Main>
-          <Switch>
-            <Route path="/tags">
-              <Tags/>
-            </Route>
-            <Route path="/money">
-              <Money/>
-            </Route>
-            <Route path="/statistics">
-              <Statistics/>
-            </Route>
-            <Redirect exact from='/' to='/money'/>
-            <Route path="*">
-              <NoMatch/>
-            </Route>
-          </Switch>
-        </Main>
-        <Nav/>
-      </Wrapper>
+      <Switch>
+        <Route path="/tags">
+          <Tags/>
+        </Route>
+        <Route path="/money">
+          <Money/>
+        </Route>
+        <Route path="/statistics">
+          <Statistics/>
+        </Route>
+        <Redirect exact from='/' to='/money'/>
+        <Route path="*">
+          <NoMatch/>
+        </Route>
+      </Switch>
     </Router>
   );
 }
 
 function Tags() {
   return (
-    <div>
+    <Layout>
       <h2>标签</h2>
-    </div>
+    </Layout>
   );
 }
 
 function Money() {
   return (
-    <div>
+    <Layout>
       <h2>记账</h2>
-    </div>
+    </Layout>
   );
 }
 
 function Statistics() {
   return (
-    <div>
+    <Layout>
       <h2>统计</h2>
-    </div>
+    </Layout>
   );
 }
 
