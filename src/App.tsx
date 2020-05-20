@@ -1,8 +1,5 @@
 import './index.scss';
 import React from 'react';
-import styled from 'styled-components';
-import Nav from './components/Nav';
-
 
 import {
   BrowserRouter as Router,
@@ -10,7 +7,6 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Layout from './components/Layout';
 import Tags from './views/Tags';
 import Money from './views/Money';
 import Statistics from './views/Statistics';
