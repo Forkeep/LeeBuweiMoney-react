@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import React from 'react';
 
-const TypeSection = styled.section`
+const Wrapper = styled.section`
   >ul{
     background-color: #c4c4c4;
     display: flex;
@@ -22,5 +23,16 @@ const TypeSection = styled.section`
      }
     }
 `;
+
+const TypeSection: React.FC = () => {
+  return (
+    <Wrapper>
+      <ul>
+        <li className='selected'>支出</li>
+        <li>收入</li>
+      </ul>
+    </Wrapper>
+  );
+};
 
 export {TypeSection};
