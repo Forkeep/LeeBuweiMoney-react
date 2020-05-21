@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 
 const Wrapper = styled.section`
   >ul{
@@ -15,7 +15,7 @@ const Wrapper = styled.section`
         content: '';
         position: absolute;
         width: 100%;
-        height: 6px;
+        height: 4px;
         background-color: #333;
         left: 0;
         bottom: 0;
@@ -25,11 +25,16 @@ const Wrapper = styled.section`
 `;
 
 const TypeSection: React.FC = () => {
+  const [type,setType] = useState<'+'|'-'>('-');
   return (
     <Wrapper>
       <ul>
-        <li className='selected'>支出</li>
-        <li>收入</li>
+        <li className={type === '-' ? 'selected':''}
+            onClick={()=>{setType(('-'))}}
+        >支出</li>
+        <li className={type === '+' ? 'selected':''}
+            onClick={()=>{setType(('+'))}}
+        >收入</li>
       </ul>
     </Wrapper>
   );
