@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 
 const Wrapper = styled.section`
   background-color: #f5f5f5;
@@ -25,11 +25,15 @@ const Wrapper = styled.section`
 
 
 const NotesSection: React.FC = () => {
+  const [note, setNote] = useState<string>('');
   return (
     <Wrapper>
       <label>
         <span>备注</span>
-        <input type="text" placeholder='在这里添加备注'/>
+        <input type="text" placeholder='在这里添加备注'
+               value={note}
+               onChange={(e) => {setNote(e.target.value);}}
+        />
       </label>
     </Wrapper>
   );
